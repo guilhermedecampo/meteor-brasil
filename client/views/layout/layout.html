@@ -1,0 +1,58 @@
+<template name="layout">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta http-equiv="cleartype" content="on">
+
+</head>
+<body>
+  <header class="background">
+    <div class="container header center">
+    <a href="/"><h1 class="main-name">Meteor Brasil</h1></a>
+  <div class="infoUser">
+    <nav class="logSys">
+      <ul>
+        <li class="line"><a href="/feed">Feed</a></li>
+        <li class="line"><a href="/projetos">Projetos</a></li>
+        <li class="line"><a href="/mural">Mural</a></li>
+        <li class="line"><a href="/mural">Revisão de Versões</a></li>
+        <li class="line">{{loginButtons}}</li>
+      </ul>
+    </nav>
+    </div>
+  </div>
+  </header>
+  <nav class="begin center navSearch">
+    <div>
+      <h2 class="tagLine">Comunidade brasileira do framework Meteor</h2>
+      <input type="text" class="search-input" placeholder="Buscar em Meteor Brasil...">
+    </div>
+    <ul class="container secondMenu leftAlign">
+      <li class="line0"><a href="/">Tudo</a></li>
+      <li class="line0"><a href="/artigos">Artigos</a></li>
+      <li class="line0"><a href="/videos-tutoriais">Vídeos Tutoriais</a></li>
+    </ul>
+  </nav>
+    <div class="wrapperFix container">
+	   {{yield}}
+     <div class="push"></div>
+  </div>
+  <div class="footerFix">
+  <footer>
+      <ul>
+        <li class="inline"><a href="/sobre">Sobre</a></li>
+        <li class="inline"><a href="/membros">Membros</a></li>
+        <li class="inline"><a href="/p&t">P&T</a></li>
+        <li class="inline">
+          <a class="media" href="">F</a>
+          <a class="media" href="">T</a>
+          <a class="media" href="">@</a>
+        </li>
+      </ul>
+  </footer>
+  </div>
+</body>
+
+</template>
+

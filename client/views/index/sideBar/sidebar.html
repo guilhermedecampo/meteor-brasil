@@ -1,0 +1,16 @@
+<template name="sideBar">
+<section class="center">
+<ul class="hot-tags">
+  <li><h2>Artigos Top</h2></li>
+  {{#each hotArticles}}
+    <a href="/{{slug}}"><li class="justify">{{title}}</li></a>
+  {{/each}}
+</ul>
+<ul class="hot-tags">
+  <li><h2>Videos Top</h2></li>
+  {{#each hotVideos}}
+    <a href="/{{slug}}"><li class="justify">{{title}}</li></a>
+  {{/each}}
+</ul>
+</section>
+</template>

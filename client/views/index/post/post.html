@@ -1,0 +1,32 @@
+<template name="post">
+	<section class="content container">
+    <div class="pattern">
+        <div class="pattern-body">
+
+                <h1 id="titleSedi" >{{title}}</h1>
+
+                <div class="show" >{{{content}}}</div>
+        </div>
+        <div class="pattern-footer">
+            <span class="">
+                 <div class="wrapper">
+                   <p class="date"><b class="black">Created at:</b> {{createdAt}} </p>
+                   <p class="date"><b class="black">by</b></p>
+                   <p class="views"> - {{openCount}} views</p>
+                 </div>
+            </span>
+            <div class="save">
+              {{#if buttonEditing}}
+                <button class="button cancelChanges">Cancel</button>
+                <button class="button saveContentButton">Save Changes</button>
+                <input type="submit" class="button deleteSedi" id="delete" value="Delete">
+              {{else}}
+                <button class="button editContentButton">Edit content</button>
+              {{/if}}
+
+            </div>
+        </div>
+    </div>
+</template>
+
+

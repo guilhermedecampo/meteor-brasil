@@ -1,0 +1,22 @@
+<template name="posts">
+      {{#ifAny list}}
+      <section>
+          <div class="containerPosts center">
+            {{#each list}}
+            <div class="one two four">
+              <div class="service smooth">
+                <img  src="images/services/{{itemName}}.svg" alt="{{title}}">
+                <h5>{{tags}}</h5>
+                <p>{{content}},00€
+                </p>
+                 <p class="date">{{creator}}</p>
+                <p class="views">{{openCount}} views</p>
+              </div>
+            </div>
+            {{/each}}
+          </div>
+      </section>
+      {{else}}
+        <h3 class="notfound">Nothing</h3>
+      {{/ifAny}}
+</template>

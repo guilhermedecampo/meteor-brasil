@@ -1,0 +1,371 @@
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+
+article, aside, details, figcaption, figure, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+ul {margin:0; padding:0;}
+
+html, body {
+      height: 100%;
+}
+
+.wrapperFix {
+min-height: 100%;
+height: auto !important;
+height: 100%;
+margin: 0 auto 50px;
+}
+.footerFix, .push {
+height: 50px;
+clear: both;
+}
+
+#footer {
+      position: relative;
+      width: 100%;
+      bottom: 0;
+      height: 50px;  /* This value is the height of your footer */
+}
+
+.inline {display: inline-block;}
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Force vertical scrollbar in non-IE
+ * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+
+
+html       { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; height: 100%; }
+
+body       { margin: 0;  line-height: 1.231; font: 20px/1.5em "GillSans-Light", "GillSans", Helvetica, 'Segoe UI', sans-serif; color: #000; background-color: #fff;}
+
+
+h1         { font-size: 3.0em; font-weight: 200; line-height: 1.231;}
+
+h2, h3, h4, h5, h6 { font-weight: 200; }
+
+ul {list-style: none;}
+
+article { margin-bottom: 50px;}
+
+.container { margin:0 auto; padding:0 auto; max-width:1200px; }
+
+.center { text-align: center; }
+
+.pull-left {float: left; }
+
+.pull-right { float: right; }
+
+.leftAlign { text-align: left; }
+
+.rightAlign {text-align: right; }
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+a { color: #000; text-decoration: none; -webkit-transition:color 0.2s linear; -moz-transition:color 0.2s linear; }
+
+a:hover { text-decoration: underline; -webkit-transition:color 0.2s linear; -moz-transition:color 0.2s linear; }
+
+a:focus { outline: thin dotted; }
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0; }
+
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+
+p { padding:0; font-size:18px; line-height:1.6em; }
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/e
+ */
+
+img { border: 0; -ms-interpolation-mode: bicubic;  }
+
+
+/* =============================================================================
+   Header
+   ========================================================================== */
+
+header				      { position:absolute; height:100px; width:100%;}
+.header             { padding-top:25px;height:100px;}
+.main-name			    { float:left; font-size:1.5em; letter-spacing:0.1em; margin:5px; padding-left: 10px; display:inline-block;}
+.main-startup       { padding-top: 10px; font-size:1.5em; letter-spacing:0.1em; margin:0 auto;  display:inline-block;}
+.logSys             { display:inline-block; float:right; padding-right: 10px; margin:5px; vertical-align: top;}
+.p-nav              { display: inline-block; font-size: 16px;}
+.login-display-name { display:inline-block;cursor:pointer;}
+#login-buttons-logout {display:inline-block;cursor:pointer;}
+#login-buttons-facebook {cursor:pointer;}
+.login-display-name:hover { text-decoration: underline;}
+#login-buttons-logout:hover {text-decoration: underline;}
+#login-buttons-facebook:hover {text-decoration: underline;}
+.search-input          { border:0; border-bottom: 1px dashed; text-align: justify; font-size:15px;  color:#000; outline: 0;width: 250px; background-color: transparent;}
+.background { background: #BECDCE;}
+.tagLine { margin-top: 0; padding-top: 20px; padding-bottom: 0px; background-color:#ecf0f1;}
+.navSearch {background-color:#ecf0f1;}
+.secondMenu {padding-left: 10px;}
+
+.begin {
+ padding-top: 100px;
+ padding-bottom: 10px;
+}
+
+/* =============================================================================
+   Index
+   ========================================================================== */
+.list     { width:100%; text-align:center; height:100%; margin-bottom: 50px;}
+.list ul  {display:inline-block; vertical-align: top; list-style-type: none; margin:0; }
+
+.display { border-radius: 50%; border: 5px solid #f2f1f2; }
+.dark    { background-color: rgba(0,0,0, 0.3)}
+
+.verticalLine { vertical-align: middle;}
+.line    {display: inline-block; font-size: 16px; vertical-align: middle; padding:5px; margin-right: 8px;}
+.line0    { display: inline-block; font-size: 16px; vertical-align: middle; padding:5px;}
+
+.circle { border-radius: 50%;}
+
+/* =============================================================================
+   Posts list
+   ========================================================================== */
+
+.smooth,.smooth img{-webkit-transition: all 0.4s ease-in-out;-moz-transition: all 0.4s ease-in-out;-o-transition: all 0.4s ease-in-out;transition: all 0.4s ease-in-out;}
+.service{padding:10px 0;color:#999;text-align: center;cursor:pointer;}
+.service h5{margin-bottom: 0;margin-bottom: 0.5em;color:#999;font-size: 1.3125em;-webkit-transition: all 0.4s ease-in-out;-moz-transition: all 0.4s ease-in-out;-o-transition: all 0.4s ease-in-out;transition: all 0.4s ease-in-out;}
+.service p{padding:0 1em;font-size: 1em;line-height:1.2em;}
+.service img{margin-top:0;width: 100%;height: auto;max-height: 100px;}
+.service:not(active) img{opacity:0.5;}
+.service:hover img, .service.active img{opacity:1;}
+/* Animations */
+.service:hover, .service.active{color: #1a1a1a;}
+.service:hover h5, .service.active h5{color: #25AAE1;}
+
+.one,
+.two,
+.four {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+  .containerPosts {
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 680px) {
+.one {
+      width: 80%;
+  }
+.containerPosts {
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .containerPosts {
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .two {
+    width: 45%;
+    float: left;
+  }
+}
+@media (min-width: 900px) {
+  .containerPosts {
+    max-width: 940px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.four {
+  float: left;
+  width: 21%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content-list {padding-top: 0px; padding-left: 50px;}
+.notfound     { text-align: center;}
+.views        { display:inline-block; font-style:italic; color:#000; font-size: 18px;}
+.black        { color:#000;}
+.titleList    { margin-bottom: 20px; font-size: 2.0em; margin-top: 20px; border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
+.paddingList  { padding-top: 50px;}
+
+.pattern { margin-bottom: 20px;background-color: #ffffff; outline: none;}
+.pattern-body {  padding: 15px 15px 15px 15px;}
+.pattern-footer {
+  padding: 14px 15px 15px;
+  margin-bottom: 0;
+  text-align: right;
+  border-top: 1px solid #ddd;
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: inset 0 1px 0 #ffffff;
+  -moz-box-shadow: inset 0 1px 0 #ffffff;
+  box-shadow: inset 0 1px 0 #ffffff;
+}
+.pattern-footer:after {
+clear: both;
+}
+
+.pattern-footer:before, .pattern-footer:after {
+display: table;
+line-height: 0;
+content: "";
+}
+.pattern-footer:before, .pattern-footer:after {
+display: table;
+line-height: 0;
+content: "";
+}
+
+.patternComment {
+  text-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);-moz-text-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+
+}
+
+.listPattern:hover { text-decoration: none;}
+
+/* =============================================================================
+   Content
+   ========================================================================== */
+
+   #content {
+    width: 97.5%;
+    min-height: 200px;
+    max-width: 97.5%;
+    min-width: 97.5%;
+    background: #fff;
+    outline: none;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 10px 10px 10px;
+    border: 2px solid #ddd;
+    background:#fafafa;
+   }
+
+
+.tag {
+       margin: 5px;
+       padding: 2px 7px;
+       font-size: 80%;
+       background: #636363;
+       color: #fff;
+       display:inline-block;
+       border:0;
+   }
+
+.itemTags {}
+#addTag {cursor: pointer;}
+#createTag, #editTag {background:none; outline:0; color: #fff; border:0; font-size: 80%; cursor: pointer;}
+#nameTag {display:inline-block;}
+.remove  {display:inline-block; cursor: pointer;}
+
+/* =============================================================================
+   Admin
+   ========================================================================== */
+
+
+/*CreateSedi template*/
+#title            { background:#fafafa;border: none; border: 2px solid #ddd; margin-top:20px;  font-size:2.0em;  outline: 0;  width: 97.5%;  padding: 10px 10px 10px 10px;}
+#description      { background:#fafafa;border: none; border: 2px solid #ddd;  margin-top:40px;  font-size:1.5em;  outline: 0;  width: 97.5%; padding: 10px 10px 10px 10px;}
+#link             { background:#fafafa;border: none; border: 2px solid #ddd; margin-top:20px;  font-size:2.0em;  outline: 0;  width: 97.5%;  padding: 10px 10px 10px 10px;}
+/*Sedi template*/
+#editTitle        {  background:#fafafa;border: none; border: 1px solid #ddd; margin-top:20px;  font-size:2.0em;  outline: 0;  width: 97.5%; padding: 10px 10px 10px 10px;}
+#editDescription  { background:#fafafa;border: none; border: 1px solid #ddd; margin-top:20px;  font-size:1.5em;  outline: 0;  width: 97.5%; padding: 10px 10px 10px 10px;}
+
+
+/* =============================================================================
+   Footer
+   ========================================================================== */
+
+
+footer    { text-align: center; font-size: 14px; height:50px; background-color:#ecf0f1; }
+footer li { width:20%; display:inline-block; list-style-type: none; padding:10px;}
+footer ul { padding-right: 0px;}
+.media { width:20px; }
+
+
+/* ==|== media queries ======================================================
+
+   ========================================================================== */
+
+@media only screen and (max-width: 545px) {
+  /* Style adjustments for viewports 480px and over go here */
+  .list     { width:100%; text-align:center; height:100%; }
+  .list ul  { width:100%;padding:0px; margin:0px;  }
+  .management li  { display: block; width:100%;padding:0px; margin:0px;  }
+  .titleList{ font-size: 32px;}
+  .user-info ul { width:100%; padding:0px; margin:0px;}
+  .emailLogin {width: 100px;}
+  .passwordLogin {width: 100px;}
+  .go {margin-top: 5px;}
+  .forgot {margin-top: 5px;}
+  .more ul {display:block; width:100%; padding:0px; margin:0px;}
+  .hot-searches {display:block; width:100%;}
+  .hot-tags {display:block;width:100%;}
+  .new-ones {display:block;width:100%;}
+  .tagLine {font-size: 32px; padding-top: 0;}
+  h2 {font-size: 22px;}
+  .main-name { float:none;text-align: center; padding:0;}
+  .main-startup { padding-left: 0px;}
+  header { position:static; height: 150px;}
+  .totalContent { width:100%;}
+  .content {padding-left: 20px;}
+  .sideBar {display:none;}
+  .sideBarMini {width:0;}
+  .title { width: 80%;}
+  .logSys{margin-top: 30px;}
+  .beginRight {width: 100%;}
+  .beginLeft {width: 100%;}
+  .analytic {display: block; width:100%;}
+  .line    {display: block; font-size: 18px; text-align: center;}
+  .line0    {display: block; text-align: center;}
+  .helpme {width:80%;}
+  footer {height: 100px;}
+ .logSys {float:none;text-align:center;}
+ .begin {padding-top: 20px;}
+
+
+@media only screen and (min-width: 545px) {
+
+}
