@@ -15,11 +15,9 @@ Handlebars.registerHelper('linkStore',function(){
 });
 
 
-Handlebars.registerHelper('markdownAlternate', function (options) {
+Handlebars.registerHelper('mark', function (options) {
       var message = options.fn(this),
         markedMessage = null;
-
-        message = message.replace(/^ *(#{1,6}) *([^\n]+?) *#* *(?:\n+|$)/, '$2').replace(/^([^\n]+)\n *(=|-){2,} *(?:\n+|$)/, '$1');
         markedMessage = marked(message);
         markedMessage = markedMessage.replace(/<a href/g, '<a target="_blank" href');
         return markedMessage;
@@ -80,7 +78,7 @@ Template.admin.events({
   //A cada digitacao as letras sao guardadas na variavel reativa Session
   'keyup #title': function (event, template){
     NProgress.start();
-      Session.set("titleStore", marked(template.find('#title').value));
+      Session.set("titleStore", template.find('#title').value);
     NProgress.done();
   },
   //A cada digitacao as letras sao guardadas na variavel reativa Session

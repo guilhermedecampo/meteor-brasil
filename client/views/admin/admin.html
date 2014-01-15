@@ -1,7 +1,7 @@
 <template name="admin">
 
-  <section class="content container">
-   <h2 class="center">Seja bem vindo ao Meteor Brasil, {{firstName}}!</h2>
+  <section class="content container center">
+   <h2>Seja bem vindo ao Meteor Brasil, {{firstName}}!</h2>
    {{#if showCreateContent}}
    <button class="contentActions">Cancelar Post</button>
    {{else}}
@@ -15,64 +15,50 @@
   <article class="createSediArticle">
     <div class="pattern">
         <div class="pattern-body">
+          <div class="center">
           <select  id="category" class="select">
             <option value="">Categoria da informação</option>
                 <option value="artigo">Artigo</option>
                 <option value="videoTutorial">Video Tutorial</option>
           </select>
-            <input type="text" id="title" autocomplete="off" maxlength="40" placeholder="Title" value="{{titleStore}}"/>
-            <textarea  id="content" placeholder="Conteudo">{{contentStore}}</textarea>
-            <input type="text" id="link" autocomplete="off" maxlength="40" placeholder="Link original" value="{{linkStore}}"/>
+          </div>
+            <input type="text" id="title" autocomplete="off" maxlength="40" placeholder="Título" value="{{titleStore}}"/>
+            <input type="text" id="title" autocomplete="off" maxlength="40" placeholder="Descrição" value="{{titleStore}}"/>
+            <textarea  id="content" placeholder="Conteúdo (markdown disponível)">{{contentStore}}</textarea>
+            <input type="text" id="link" autocomplete="off" placeholder="Link original" value="{{linkStore}}"/>
+            {{> createTags}}
         </div>
-
-        <div class="pattern-footer">
-              {{> createTags}}
-              <div class="save">
+              <div class="center">
                 <button  id="submitPost">Publicar</button>
               </div>
-        </div>
     </div>
   </article>
   </section>
 {{/if}}
 
 
+
   <section class="content container">
-    <h2>Seus artigos</h2>
+    <h2 class="center">Seus artigos</h2>
       {{#ifAny list}}
-          {{#each list}}
-          <a class="listPattern" href="/{{slug}}">
-          <div class="pattern">
-              <div class="pattern-body">
-                  <h1 class="titleList" >{{title}}</h1>
-                  <p><b class="black inline">Tags:</b><span class="">{{tags}}</span></p>
-                  <p>{{{dotdotdot content}}}</p>
-              </div>
-              <div class="pattern-footer">
-                  <span class="">
-                      <div class="wrapper">
-                      <p class="date"><b class="black">Created at:</b> {{createdAt}} - </p>
-                       <p class="date"><b class="black">by</b></p>
+            <section>
+                <div class="containerPosts center">
+                  {{#each list}}
+                  <div class="one two four">
+                    <div class="service smooth">
+                      <img  src="images/services/{{itemName}}.svg" alt="{{title}}">
+                      <h5>{{tags}}</h5>
+                      <p>{{content}}</p>
                        <p class="date">{{creator}}</p>
                       <p class="views">{{openCount}} views</p>
-                      </div>
-                  </span>
-              </div>
-          </div>
-          </a>
-          {{/each}}
-            {{#if allSedis}}
-            <div class="center paddingList">
-              <input type="submit" id="submit" class="button" value="More!">
-            </div>
-            {{/if}}
-        </section>
-      {{else}}
-        <h3 class="notfound">Nenhum artigo ou tutorial criado...</h3>
-      {{/ifAny}}
-  </section>
-
-
+                    </div>
+                  </div>
+                  {{/each}}
+                </div>
+            </section>
+            {{else}}
+              <h3 class="notfound">Nothing</h3>
+            {{/ifAny}}
 
 
 </template>
