@@ -9,6 +9,7 @@
     "Spy": {},
     "humane": {},
     "bootstrap-3": {},
-    "fast-render": {}
+    "fast-render": {},
+    "marked": {}
   }
 }
