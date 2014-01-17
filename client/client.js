@@ -3,10 +3,26 @@
 Meteor.subscribe("posts");
 Meteor.subscribe("admin");
 
-  //////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+var textareas = document.getElementsByTagName("textarea");
+for ( var i = 0 ; i < textareas.length ; i++ ) {
+ textareas[i].style.overflow = "hidden";
+ textareas[i].onkeyup = function() {
+  var length = this.value.length;
+  if(length > (this.rows * this.cols - this.cols)) ++this.rows;
+ }
+};
 
-  moment.lang('pt-br');
+Handlebars.registerHelper('mark', function (options) {
+      var message = options.fn(this),
+        markedMessage = null;
+        markedMessage = marked(message);
+        markedMessage = markedMessage.replace(/<a href/g, '<a target="_blank" href');
+        return markedMessage;
+    });
 
+
+//////////////////////////////////////////////////////////////
 
 //Validacoes
 //Campo Vazio
@@ -75,6 +91,19 @@ isNotTheSame = function (val) {
     }
 };
 
-Deps.autorun(function () {
-  moment.lang('pt-br');
-});
+//Timer to save data
+myTimer = function(){
+    var timer;
+
+    this.set = function(saveFormCB) {
+      timer = Meteor.setTimeout(function() {
+        saveFormCB();
+      }, 3000);
+    };
+
+    this.clear = function() {
+      Meteor.clearInterval(timer);
+    };
+
+    return this;
+  }();

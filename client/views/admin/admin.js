@@ -1,3 +1,5 @@
+//////////////////////////////////////////////////////////////
+
 ////Criacao de helpers para guardar as informacoes dos campos
 //Importante para caso alguma merda aconteca tipo: conexao pedida..
 
@@ -5,6 +7,9 @@ Handlebars.registerHelper('titleStore',function(){
   return Session.get("titleStore");
 });
 
+Handlebars.registerHelper('descriptionStore',function(){
+  return Session.get("descriptionStore");
+});
 
 Handlebars.registerHelper('contentStore',function(){
   return Session.get("contentStore");
@@ -13,15 +18,6 @@ Handlebars.registerHelper('contentStore',function(){
 Handlebars.registerHelper('linkStore',function(){
   return Session.get("linkStore");
 });
-
-
-Handlebars.registerHelper('mark', function (options) {
-      var message = options.fn(this),
-        markedMessage = null;
-        markedMessage = marked(message);
-        markedMessage = markedMessage.replace(/<a href/g, '<a target="_blank" href');
-        return markedMessage;
-    });
 
 
 Template.admin.rendered = function () {
@@ -35,23 +31,7 @@ Template.admin.rendered = function () {
       }
   });
 };
-//Timer to save data
 
-var myTimer = function(){
-    var timer;
-
-    this.set = function(saveFormCB) {
-      timer = Meteor.setTimeout(function() {
-        saveFormCB();
-      }, 3000);
-    };
-
-    this.clear = function() {
-      Meteor.clearInterval(timer);
-    };
-
-    return this;
-  }();
 
 Template.admin.helpers({
   showCreateContent: function () {
@@ -82,29 +62,32 @@ Template.admin.events({
     NProgress.done();
   },
   //A cada digitacao as letras sao guardadas na variavel reativa Session
-  'keyup #content': function (event, template){
-    myTimer.clear();
-    myTimer.set(function() {
+  'keyup #description': function (event, template){
       NProgress.start();
-       Session.set("contentStore", template.find('#content').value);
+       Session.set("descriptionStore", template.find('#description').value);
       NProgress.done();
-      });
   },
   'keyup #link': function (event, template){
-    NProgress.start();
-      Session.set("linkStore", template.find('#link').value);
-    NProgress.done();
+      NProgress.start();
+       Session.set("linkStore", $('#link').html());
+      NProgress.done();
+  },
+  //A cada digitacao as letras sao guardadas na variavel reativa Session
+  'keyup #content': function (event, template){
+      NProgress.start();
+       Session.set("contentStore", $('#content').val());
+      NProgress.done();
   },
   'click #submitPost': function (event, template) {
     var title        = template.find('#title').value,
-        content      = template.find('#content').value,
+        content      = $('#content').html(),
         list         = tagsList.findOne(),
         tags         = list.tags,
         slug         = URLify2(title),
         owner        = Meteor.user()._id,
         SortCreated  = new Date(),
         createdAt    = moment().format ('D [de] MMMM [de] YYYY'),
-        link   = template.find('#link').value,
+        link         = $('#link').html(),
         category     = template.find('#category').value,
         openCount    = 0;
         NProgress.start();

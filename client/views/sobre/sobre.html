@@ -1,4 +1,4 @@
-<template name="admin">
+<template name="sobre">
 
   <section class="content container center">
    <h2>Seja bem vindo ao Meteor Brasil, {{firstName}}!</h2>
@@ -12,28 +12,27 @@
 
 {{#if showCreateContent}}
   <section class="content container">
-    <div class="center">
-    <select  id="category" class="select">
-      <option value="">Categoria da informação</option>
-          <option value="artigo">Artigo</option>
-          <option value="videoTutorial">Video Tutorial</option>
-    </select>
-    </div>
   <article class="createSediArticle">
     <div class="pattern">
-
+        <div class="pattern-body">
+          <div class="center">
+          <select  id="category" class="select">
+            <option value="">Categoria da informação</option>
+                <option value="artigo">Artigo</option>
+                <option value="videoTutorial">Video Tutorial</option>
+          </select>
+          </div>
             <input type="text" id="title" autocomplete="off" maxlength="40" placeholder="Título" value="{{titleStore}}"/>
-            <input type="text" id="description" autocomplete="off" maxlength="80" placeholder="Descrição" value="{{descriptionStore}}"/>
+            <input type="text" id="title" autocomplete="off" maxlength="40" placeholder="Descrição" value="{{titleStore}}"/>
+            <textarea  id="content" placeholder="Conteúdo (markdown disponível)">{{contentStore}}</textarea>
             <input type="text" id="link" autocomplete="off" placeholder="Link original" value="{{linkStore}}"/>
-            <textarea id="content" placeholder="Conteúdo (markdown disponível)">{{contentStore}}</textarea>
-
-
             {{> createTags}}
         </div>
+              <div class="center">
+                <button  id="submitPost">Publicar</button>
+              </div>
+    </div>
   </article>
-  <div class="center">
-    <button  id="submitPost">Publicar</button>
-  </div>
   </section>
 {{/if}}
 
@@ -64,25 +63,6 @@
 
 </template>
 
-<template name="createTags">
-<div class="itemTags">
-     {{#each listTags}}
-       <div class="tag">
-         <div id="nameTag">{{tag}}</div>
-         <div class="remove">x</div>
-       </div>
-     {{/each}}
-     {{#if showTag}}
-       <div class="tag">
-         <input type="text" id="createTag" value=""/>
-       </div>
-     {{else}}
-       <button class="tag" id="addTag">
-         + tag
-       </button>
-     {{/if}}
-</div>
-</template>
 
 
 

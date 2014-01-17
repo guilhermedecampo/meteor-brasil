@@ -58,13 +58,14 @@ Router.map(function() {
     },
     fastRender: true
   });
+  /*Ainda nao
   this.route('membros', {path: '/membros',
     after: function () {
       document.body.scrollTop = 0;
     },
     fastRender: true
   });
-  this.route('p&t', {path: '/p&t',
+  this.route('p&t', {path: '/pet',
     after: function () {
       document.body.scrollTop = 0;
     },
@@ -88,6 +89,7 @@ Router.map(function() {
     },
     fastRender: true
   });
+*/
   //Router para a pagina dos posts.
   //Aqui pegamos o valor da URL e se for uma slug do post renderiza o template post com as informacoes do post
   this.route('post', {path: '/:slug',
