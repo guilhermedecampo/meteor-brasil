@@ -10,6 +10,7 @@
     "humane": {},
     "bootstrap-3": {},
     "fast-render": {},
-    "marked": {}
+    "marked": {},
+    "moment-with-langs": {}
   }
 }

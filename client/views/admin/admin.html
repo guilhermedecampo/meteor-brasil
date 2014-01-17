@@ -25,9 +25,10 @@
             <input type="text" id="title" autocomplete="off" maxlength="40" placeholder="Título" value="{{titleStore}}"/>
             <input type="text" id="description" autocomplete="off" maxlength="80" placeholder="Descrição" value="{{descriptionStore}}"/>
             <input type="text" id="link" autocomplete="off" placeholder="Link original" value="{{linkStore}}"/>
-            <textarea id="content" placeholder="Conteúdo (markdown disponível)">{{contentStore}}</textarea>
 
-
+            {{#constant}}
+            <div id="content" contenteditable="true" placeholder="Conteúdo (Markdown disponível)">{{{contentStore}}}</div>
+            {{/constant}}
             {{> createTags}}
         </div>
   </article>
@@ -36,32 +37,7 @@
   </div>
   </section>
 {{/if}}
-
-
-
-  <section class="content container">
-    <h2 class="center">Seus artigos</h2>
-      {{#ifAny list}}
-            <section>
-                <div class="containerPosts center">
-                  {{#each list}}
-                  <div class="one two four">
-                    <div class="service smooth">
-                      <img  src="images/services/{{itemName}}.svg" alt="{{title}}">
-                      <h5>{{tags}}</h5>
-                      <p>{{content}}</p>
-                       <p class="date">{{creator}}</p>
-                      <p class="views">{{openCount}} views</p>
-                    </div>
-                  </div>
-                  {{/each}}
-                </div>
-            </section>
-            {{else}}
-              <h3 class="notfound">Nothing</h3>
-            {{/ifAny}}
-
-
+{{>artigos}}
 </template>
 
 <template name="createTags">
@@ -82,6 +58,30 @@
        </button>
      {{/if}}
 </div>
+</template>
+
+<template name="artigos">
+  <section class="content container">
+    <h2 class="center">Seus artigos</h2>
+      {{#ifAny list}}
+            <section>
+                <div class="containerPosts center">
+                  {{#each list}}
+                  <div class="one two four">
+                    <div class="service smooth">
+                      <img  src="images/services/{{itemName}}.jpg" alt="{{title}}">
+                      <h5>{{tags}}</h5>
+                      <p>{{#markdown}}{{{des}}}{{/markdown}}</p>
+                       <p class="date">{{creator}}</p>
+                      <p class="views">{{openCount}} views</p>
+                    </div>
+                  </div>
+                  {{/each}}
+                </div>
+            </section>
+            {{else}}
+              <h3 class="notfound">Nothing</h3>
+            {{/ifAny}}
 </template>
 
 

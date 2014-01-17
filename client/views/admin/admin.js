@@ -21,15 +21,8 @@ Handlebars.registerHelper('linkStore',function(){
 
 
 Template.admin.rendered = function () {
-  marked.setOptions({
-      langPrefix: '',
-      breaks: true,
-      gfm: true,
-      sanitize: true,
-      highlight: function(code) {
-          return hljs.highlightAuto(code).value;
-      }
-  });
+  "aba".replace(/<(?:.|\n)*?>/gm, '');
+  moment.lang('pt-br');
 };
 
 
@@ -40,10 +33,15 @@ Template.admin.helpers({
   firstName: function () {
     return Meteor.user().profile.first_name;
   },
+});
+
+Template.artigos.helpers({
   list: function () {
     return Posts.find({},{sort: {SortCreated: -1}, limit: 10});
   }
 });
+
+
 
 ///////////////////////////////////////////////////////////
 
@@ -69,35 +67,41 @@ Template.admin.events({
   },
   'keyup #link': function (event, template){
       NProgress.start();
-       Session.set("linkStore", $('#link').html());
+       Session.set("linkStore", $('#link').val());
       NProgress.done();
   },
   //A cada digitacao as letras sao guardadas na variavel reativa Session
   'keyup #content': function (event, template){
-      NProgress.start();
-       Session.set("contentStore", $('#content').val());
-      NProgress.done();
+     myTimer.clear();
+       myTimer.set(function() {
+         NProgress.start();
+          Session.set("contentStore", $('#content').html());
+          $('#content').focus();
+         NProgress.done();
+         });
   },
   'click #submitPost': function (event, template) {
     var title        = template.find('#title').value,
+        description  = template.find('#description').value,
         content      = $('#content').html(),
         list         = tagsList.findOne(),
         tags         = list.tags,
         slug         = URLify2(title),
         owner        = Meteor.user()._id,
         SortCreated  = new Date(),
-        createdAt    = moment().format ('D [de] MMMM [de] YYYY'),
-        link         = $('#link').html(),
+        createdAt    = moment().format ('D [de] MMMM [de] YYYY [às] hh:mm'),
+        link         = template.find('#link').value,
         category     = template.find('#category').value,
         openCount    = 0;
         NProgress.start();
     if ( isNotEmpty(title)&& isNotEmpty(content))
     {
-    Posts.insert({title: title, content: content, tags: tags, slug: slug, owner: owner, SortCreated: SortCreated, createdAt: createdAt, link: link, category: category, openCount: openCount, });
+    Posts.insert({title: title, description:description, content: content, tags: tags, slug: slug, owner: owner, SortCreated: SortCreated, createdAt: createdAt, link: link, category: category, openCount: openCount, });
     tagsList.update(list._id, {tags: []});
     //TODO make clean the collection when the user get out of the create page
     Session.set("titleStore", "");
-    Session.set("contentStore", "");
+    Session.set("descriptionStore", "");
+    $('#content').html('');
     Session.set('linkStore', "");
     Session.set('tags', undefined);
     }

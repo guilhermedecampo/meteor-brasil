@@ -12,7 +12,8 @@
       "humane": {},
       "bootstrap-3": {},
       "fast-render": {},
-      "marked": {}
+      "marked": {},
+      "moment-with-langs": {}
     },
     "packages": {
       "iron-router": {
@@ -62,13 +63,18 @@
       },
       "fast-render": {
         "git": "https://github.com/arunoda/meteor-fast-render.git",
-        "tag": "v0.1.7",
-        "commit": "4bc146c8e8b879cbb0a7059f38793839da015fa4"
+        "tag": "v0.1.11",
+        "commit": "7514e0e8f6f387f7ba510eb633568831a066b481"
       },
       "marked": {
         "git": "https://github.com/chuangbo/meteor-marked.git",
         "tag": "v0.2.9",
         "commit": "6485d6f03841501f81176e34ab375840473aa714"
+      },
+      "moment-with-langs": {
+        "git": "https://github.com/jeeeyul/meteor-moment-with-langs.git",
+        "tag": "v1.0.0.0",
+        "commit": "fd3d34b1a6458fac243d4cd42171a4d1085344b2"
       }
     }
   }

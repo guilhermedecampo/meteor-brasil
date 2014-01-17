@@ -4,14 +4,6 @@ Meteor.subscribe("posts");
 Meteor.subscribe("admin");
 
 //////////////////////////////////////////////////////////////
-var textareas = document.getElementsByTagName("textarea");
-for ( var i = 0 ; i < textareas.length ; i++ ) {
- textareas[i].style.overflow = "hidden";
- textareas[i].onkeyup = function() {
-  var length = this.value.length;
-  if(length > (this.rows * this.cols - this.cols)) ++this.rows;
- }
-};
 
 Handlebars.registerHelper('mark', function (options) {
       var message = options.fn(this),

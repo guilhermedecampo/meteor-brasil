@@ -227,6 +227,11 @@ header				      { position:static; height:100px; width:100%;}
     overflow:hidden;
    }
 
+   #content:empty:before {
+       content: attr(placeholder);
+       color: #bababa;
+   }
+
 
 .tag {
        margin: 5px;

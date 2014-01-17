@@ -14,9 +14,9 @@ accounts-facebook
 urlify2
 underscore
 nprogress
-moment
 Spy
 humane
 accounts-ui-unstyled
 fast-render
 marked
+moment-with-langs
