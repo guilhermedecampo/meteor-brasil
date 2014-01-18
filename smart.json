@@ -1,7 +1,6 @@
 {
   "packages": {
     "iron-router": {},
-    "accounts-ui-bootstrap-3": {},
     "smart-collections": {},
     "urlify2": {},
     "nprogress": {},
