@@ -14,8 +14,11 @@ accounts-facebook
 urlify2
 underscore
 nprogress
-humane
 accounts-ui-unstyled
 fast-render
 marked
 moment-with-langs
+scss
+bootstrap3-sass
+font-awesome
+modernizr-meteor

@@ -1,62 +1,221 @@
 <template name="layout">
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<meta name="HandheldFriendly" content="True">
-	<meta name="MobileOptimized" content="320">
-	<meta http-equiv="cleartype" content="on">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta http-equiv="cleartype" content="on">
+		
+	</head>
+	<body>
+		<header>
 
-</head>
-<body>
-  <header class="background">
-    <div class="container header center">
-    <a href="/"><h1 class="main-name">Meteor Brasil</h1></a>
-  <div class="infoUser">
-    <nav class="logSys">
-      <ul>
-        <!--Ainda não
-        <li class="line"><a href="/feed">Feed</a></li>
-        <li class="line"><a href="/projetos">Projetos</a></li>
-        <li class="line"><a href="/mural">Mural</a></li>
-        <li class="line"><a href="/rev-versoes">Revisão de Versões</a></li>
-      -->
-        <li class="line">{{loginButtons}}</li>
-      </ul>
-    </nav>
-    </div>
-  </div>
-  </header>
-  <nav class="begin center navSearch">
-    <div>
-      <h2 class="tagLine">Comunidade brasileira do framework Meteor</h2>
-      <input type="text" class="search-input" placeholder="Buscar em Meteor Brasil...">
-    </div>
-    <ul class="container secondMenu leftAlign">
-      <li class="line0"><a href="/">Tudo</a></li>
-      <li class="line0"><a href="/artigos">Artigos</a></li>
-      <li class="line0"><a href="/videos-tutoriais">Vídeos Tutoriais</a></li>
-    </ul>
-  </nav>
-    <div class="wrapperFix container">
-	   {{yield}}
-     <div class="push"></div>
-  </div>
-  <div class="footerFix">
-  <footer>
-      <ul>
-        <li class="inline"><a href="/sobre">Sobre</a></li>
-        <!--Ainda não
-        <li class="inline"><a href="/membros">Membros</a></li>
-        <li class="inline"><a href="/p&t">P&T</a></li>
-        -->
-        <li class="inline">
-          <a class="media" href="">F</a>
-          <a class="media" href="">T</a>
-          <a class="media" href="">@</a>
-        </li>
-      </ul>
-  </footer>
-  </div>
-</body>
+			<nav class="navbar navbar-default" role="navigation">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#">Meteor Brasil <small>beta</small></a>
+			    </div>
 
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav navbar-right">
+							<li><a href="/">Tudo</a></li>
+							<li><a href="/artigos">Artigos</a></li>
+							<li><a href="/videos-tutoriais">Vídeos Tutoriais</a></li>
+							<li class="divider"></li>
+							<li class="has-form"><a href="#" class="button">Sing-in</a></li>
+							<li class="has-form"><a href="#" class="button">Sing-up</a></li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+
+		</header>
+
+		<div class="row full-content">
+			<div class="row">
+				<h2 class="text-center">Comunidade brasileira do framework Meteor</h2>
+				<div class="col-lg-12">
+					<div class="row collapse">
+						<div class="small-11 columns">
+							<input type="text" class="search-input" placeholder="Buscar em Meteor Brasil...">
+						</div>
+						<div class="small-1 columns">
+							<a href="#" class="button postfix">Buscar</a>
+						</div>
+					</div>
+				</div>
+			</div>
+	 
+			<!-- Button trigger modal -->
+			<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+			  Launch demo modal
+			</button>
+
+			<div class="container">
+				<ul class="grid cs-style-3">
+					<li>
+						<figure>
+							<h5 class="title">One line browser notepad</h5>
+							<img style="" src="images/4.png" alt="img04">
+							<figcaption>
+								<h5>One line browser notepad</h5>
+								<a href="http://dribbble.com/shots/1116685-Settings">Ler</i></a>
+								<span>Jacob Cummings</span>
+							</figcaption>
+						</figure>
+						 <span class="label round">javascript</span>
+					</li>
+					<li>
+						<figure>
+							<h5 class="title">The single most useful thing in bash</h5>
+							<img src="images/1.png" alt="img01">
+							<figcaption>
+								<h5>The single most useful thing in bash</h5>
+								<span>Jacob Cummings</span>
+								<a href="http://dribbble.com/shots/1115632-Camera">ler</a>
+							</figcaption>
+						</figure>
+						<span class="label round alert">meteor</span><span class="label round success">css</span>
+					</li>
+					<li>
+						<figure>
+							<h5 class="title">A better git log</h5>
+							<img src="images/2.png" alt="img02">
+							<figcaption>
+								<h5>A better git log</h5>
+								<span>Jacob Cummings</span>
+								<a href="http://dribbble.com/shots/1115960-Music">ler</a>
+							</figcaption>
+						</figure>
+						<span class="label round">javascript</span><span class="label round success">css</span>
+					</li>
+					<li>
+						<figure>
+							<h5 class="title">Use a Google Spreadsheet as your JSON backend</h5>
+							<img src="images/5.png" alt="img05">
+							<figcaption>
+								<h5>Use a Google Spreadsheet as your JSON backend</h5>
+								<span>Jacob Cummings</span>
+								<a href="http://dribbble.com/shots/1116775-Safari">ler</a>
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<h5 class="title">Shortcuts that save time</h5>
+							<img src="images/3.png" alt="img03">
+							<figcaption>
+								<h5>Shortcuts that save time</h5>
+								<span>Jacob Cummings</span>
+								<a href="http://dribbble.com/shots/1117308-Phone">ler</a>
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<h5 class="title">Bootstrap without all the debt</h5>
+							<img src="images/6.png" alt="img06">
+							<figcaption>
+								<h5>Bootstrap without all the debt</h5>
+								<span>Jacob Cummings</span>
+								<a href="http://dribbble.com/shots/1118904-Game-Center">ler</a>
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<h5 class="title">One line browser notepad</h5>
+							<img style="" src="images/4.png" alt="img04">
+							<figcaption>
+								<h5>One line browser notepad</h5>
+								<a href="http://dribbble.com/shots/1116685-Settings">Ler</i></a>
+								<span>Jacob Cummings</span>
+							</figcaption>
+						</figure>
+						 <span class="label round">javascript</span>
+					</li>
+					<li>
+						<figure>
+							<h5 class="title">The single most useful thing in bash</h5>
+							<img src="images/1.png" alt="img01">
+							<figcaption>
+								<h5>The single most useful thing in bash</h5>
+								<span>Jacob Cummings</span>
+								<a href="http://dribbble.com/shots/1115632-Camera">ler</a>
+							</figcaption>
+						</figure>
+						<span class="label round alert">meteor</span><span class="label round success">css</span>
+					</li>
+					<li>
+						<figure>
+							<h5 class="title">A better git log</h5>
+							<img src="images/2.png" alt="img02">
+							<figcaption>
+								<h5>A better git log</h5>
+								<span>Jacob Cummings</span>
+								<a href="http://dribbble.com/shots/1115960-Music">ler</a>
+							</figcaption>
+						</figure>
+						<span class="label round">javascript</span><span class="label round success">css</span>
+					</li>          
+				</ul>
+			</div><!-- /container -->
+			<script src="js/toucheffects.js"></script>
+		</div>
+	
+		<footer>
+			<div class="footer-bottom">
+				<div class="container">
+					<div class="row">
+						<div class="large-4 push-8 columns">
+							<ul class="social">
+								<li class="social-facebook transparent-effect"><a href="#"></a></li>
+								<li class="social-google-plus transparent-effect"><a href="#"></a></li>
+								<li class="social-twitter transparent-effect"><a href="#"></a></li>
+								<li class="social-youtube transparent-effect"><a href="#"></a></li>
+							</ul>
+						</div>
+
+						<div class="large-8 pull-4 columns">
+							<p class="copyright">&copy;Meteor Brasil - Todos os direitos reservados {{PEGAR AUTOMATICAMENTE O ANO CORRENTE}}</p>
+						</div>          
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+		      </div>
+		      <div class="modal-body">
+						<h2>Lorem ipsum dolor sit amet</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin rhoncus nisl. Etiam erat erat, rhoncus et lacinia ut, elementum eu augue. Pellentesque sed ultricies est, nec tempor eros. Integer mattis faucibus justo, ac pellentesque orci fermentum ut. Ut semper, justo tristique tempor porttitor, metus turpis commodo justo, at placerat lacus augue eu diam. Praesent ut mi eu justo lacinia lacinia a sed sem. Phasellus congue tellus sed nunc elementum, in aliquam sem pellentesque. Fusce eros ligula, vehicula placerat varius sit amet, aliquet et tortor.</p>
+
+						<p>Vivamus eros sem, suscipit vitae dapibus eget, blandit a risus. Maecenas id porttitor orci. Nullam fringilla adipiscing diam, nec semper diam sollicitudin quis. Mauris vitae sem nec tellus egestas ullamcorper nec suscipit augue. Suspendisse libero lacus, dignissim vitae vehicula sit amet, cursus quis sem. Vivamus sollicitudin fringilla ligula vitae mattis. Fusce viverra fringilla porta. Sed arcu nisi, tincidunt et vulputate a, malesuada sed neque. Mauris felis sem, tristique nec rhoncus non, cursus vel nisl. Nunc hendrerit velit quis lorem tristique, ut consectetur quam scelerisque. Ut eros lectus, ornare in semper at, gravida et massa. Nullam ornare magna ipsum, vel tincidunt dui pulvinar quis. Fusce varius vel velit in consequat. Mauris vestibulum magna at ipsum egestas ultrices. Praesent eu laoreet nibh. Ut et convallis libero, eu elementum nisi.</p>
+
+						<p>Curabitur sed metus neque. Vestibulum interdum nisi a nibh varius dignissim. Donec blandit dui nec congue pharetra. Aenean vestibulum augue sit amet euismod condimentum. Donec cursus erat vitae nunc iaculis, sed egestas ligula semper. Fusce egestas purus non mauris vulputate, quis congue purus ullamcorper. In id pulvinar risus, sit amet scelerisque magna. Quisque libero metus, porta ut laoreet in, consectetur quis erat. Praesent congue varius massa, ac pulvinar quam placerat id. Curabitur tempor magna tincidunt orci egestas eleifend. Nullam laoreet, ligula nec hendrerit vestibulum, ante est commodo sapien, pharetra cursus lacus diam quis lectus. Phasellus mollis adipiscing orci, nec malesuada justo congue ac. Suspendisse consequat dui id orci lacinia, a pharetra quam condimentum. Maecenas sed mattis odio. Cras eu risus lacinia, luctus massa a, varius augue. Vestibulum facilisis, mauris eu consectetur pulvinar, mi risus viverra eros, in condimentum nulla dolor ut lectus.</p> 
+			      
+			      <aside>
+							<p>Suspendisse sed massa enim. Sed eu consectetur orci. Ut posuere velit eget sem posuere, sit amet volutpat eros pretium. Nulla non risus neque. Ut vitae tincidunt metus. Nulla vitae cursus metus, quis tincidunt lacus. Maecenas varius, turpis in vestibulum rutrum, ipsum lacus condimentum dui, sed facilisis dolor tellus vel tellus. Praesent non pharetra urna. Mauris et tempus augue, nec cursus eros. Ut vel venenatis metus, sit amet molestie lorem. Donec leo ipsum, cursus at neque sit amet, blandit aliquet turpis. Aenean porta dui id accumsan tristique. In nec ante in dolor interdum porttitor. </p>
+						</aside>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</body>
 </template>
-

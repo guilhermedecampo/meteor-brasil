@@ -5,11 +5,12 @@
     "urlify2": {},
     "nprogress": {},
     "moment": {},
-    "Spy": {},
-    "humane": {},
-    "bootstrap-3": {},
     "fast-render": {},
     "marked": {},
-    "moment-with-langs": {}
+    "moment-with-langs": {},
+    "scss": {},
+    "bootstrap3-sass": {},
+    "font-awesome": {},
+    "modernizr-meteor": {}
   }
 }

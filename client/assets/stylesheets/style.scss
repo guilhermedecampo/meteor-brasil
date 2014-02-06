@@ -1,0 +1,76 @@
+@import 'packages/bootstrap3-sass/bootstrap';
+
+body {
+  background-color: #F5F5F5;
+}
+
+.full-content {
+  margin: 30px auto;
+  min-height: 860px;
+}
+
+/* -----------------------------------------
+   FOOTER
+----------------------------------------- */
+footer {
+  background-color: #2c3e50;
+  padding-top: 20px;
+  color: #fff;
+}
+/* -----------------------------------------
+   SOCIAL
+----------------------------------------- */
+.social {
+  text-align: right;
+}
+
+.social-email, .social-facebook-like, .social-facebook, .social-github, .social-google-plus, .social-instagram, .social-share, .social-twitter, .social-youtube {
+  background: url(/images/social.png) no-repeat;
+}
+
+.social-email {
+  background-position: 0 -144px;
+}
+
+.social-facebook-like {
+  background-position: 0 -336px;
+}
+
+.social-facebook {
+  background-position: 0 -384px;
+}
+
+.social-github {
+  background-position: 0 -96px;
+}
+
+.social-google-plus {
+  background-position: 0 -48px;
+}
+
+.social-instagram {
+  background-position: 0 -288px;
+}
+
+.social-share {
+  background-position: 0 -192px;
+}
+
+.social-twitter {
+  background-position: 0 -240px;
+}
+
+.social-youtube {
+  background-position: 0 0;
+}
+
+ul.social li {
+  display: inline-block;
+  margin-bottom: 1px;
+}
+
+ul.social li a {
+  display: block;
+  width: 48px;
+  height: 48px;
+}

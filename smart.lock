@@ -7,12 +7,13 @@
       "urlify2": {},
       "nprogress": {},
       "moment": {},
-      "Spy": {},
-      "humane": {},
-      "bootstrap-3": {},
       "fast-render": {},
       "marked": {},
-      "moment-with-langs": {}
+      "moment-with-langs": {},
+      "scss": {},
+      "bootstrap3-sass": {},
+      "font-awesome": {},
+      "modernizr-meteor": {}
     },
     "packages": {
       "iron-router": {
@@ -37,28 +38,13 @@
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
-        "tag": "v2.2.1",
-        "commit": "9ee12e714afe56b189f53076447b7b54f3012065"
-      },
-      "Spy": {
-        "git": "https://github.com/dasmithii/Spy-pkg.git",
-        "tag": "v0.3.2",
-        "commit": "5421c259d6a151840181db673e0c1f087a6e2349"
-      },
-      "humane": {
-        "git": "https://github.com/kvsm/meteor-humane.git",
-        "tag": "v3.1.0",
-        "commit": "3524918ed9395550ca5b6ad7aa33d8e3b3c5a02e"
-      },
-      "bootstrap-3": {
-        "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
-        "tag": "v0.3.7",
-        "commit": "5dd0d142c870647b910be80bc777b96f0dd45e5e"
+        "tag": "v2.5.1",
+        "commit": "8c9bc5d3fc96705057737cb9743d555417f6e551"
       },
       "fast-render": {
         "git": "https://github.com/arunoda/meteor-fast-render.git",
-        "tag": "v0.1.11",
-        "commit": "7514e0e8f6f387f7ba510eb633568831a066b481"
+        "tag": "v0.1.12",
+        "commit": "b190f1592401f4084ce54b8f713b134e35a4e0db"
       },
       "marked": {
         "git": "https://github.com/chuangbo/meteor-marked.git",
@@ -69,6 +55,26 @@
         "git": "https://github.com/jeeeyul/meteor-moment-with-langs.git",
         "tag": "v1.0.0.0",
         "commit": "fd3d34b1a6458fac243d4cd42171a4d1085344b2"
+      },
+      "scss": {
+        "git": "https://github.com/fourseven/meteor-scss.git",
+        "tag": "v0.7.0",
+        "commit": "39f60d58c2b890bdd897ef52188644f3093fc2ac"
+      },
+      "bootstrap3-sass": {
+        "git": "https://github.com/reywood/meteor-bootstrap3-sass.git",
+        "tag": "v3.0.2-1d",
+        "commit": "c90eef6ac97157acbf3cb7b732806a9ff5f164fc"
+      },
+      "font-awesome": {
+        "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
+        "tag": "v4.0.3",
+        "commit": "61e9361384347547ae144f8228faa4deffda23db"
+      },
+      "modernizr-meteor": {
+        "git": "https://github.com/ckir/modernizr-meteor.git",
+        "tag": "v2.6.2",
+        "commit": "391ca2a3beff3cd2b0e1099cb2d744b5a2e8a73e"
       }
     }
   }
